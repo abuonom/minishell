@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+         #
+#    By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/01 14:36:32 by fcarlucc          #+#    #+#              #
-#    Updated: 2023/11/11 16:00:34 by mlongo           ###   ########.fr        #
+#    Updated: 2023/11/14 18:08:15 by abuonomo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,9 @@ YELLOW = \033[1;33m
 
 DEFAULT = \033[0m
 
+AZZURRO = \033[1;34m
+
+
 all: $(NAME)
 
 %.o : %.c
@@ -48,6 +51,13 @@ $(NAME): $(OBJS)
 	@make bonus -C libft
 	@cc $(FLAGS) $(OBJS) $(LIBFT) -o $(NAME) -lreadline
 	@echo "$(GREEN)$(NAME) created!$(DEFAULT)"
+	@echo "$(AZZURRO)"
+	@echo "   __  ________  ______  _  _____   ___  ____  __   ____"
+	@echo "  /  |/  /  _/ |/ /  _/ / |/ / _ | / _ \/ __ \/ /  /  _/"
+	@echo " / /|_/ // //    // /  /    / __ |/ ___/ /_/ / /___/ /  "
+	@echo "/_/  /_/___/_/|_/___/ /_/|_/_/ |_/_/   \____/____/___/  "
+	@echo "$(DEFAULT)"
+
 
 clean:
 	@make clean -C libft
@@ -60,3 +70,4 @@ fclean: clean
 	@echo "$(RED)all deleted!$(DEFAULT)"
 
 re: clean fclean all
+
